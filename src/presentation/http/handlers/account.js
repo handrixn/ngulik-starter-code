@@ -5,7 +5,8 @@ class AccountHandler {
     }
 
     async getAccounts(req, res) {
-        const accounts = await this.accountService.findAll();
+        console.log('=======', this)
+        const accounts = await this.accountService.getAccounts();
         
         return accounts;
     }
