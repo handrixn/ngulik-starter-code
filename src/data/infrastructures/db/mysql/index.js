@@ -10,8 +10,8 @@ function init(connectionString, connection) {
 
     if (url) {
         const basename = 'index.js';
-        const dirname = '../schemas';
-        const timezoneOffset = require('./timezone.json');
+        const dirname = `${__dirname}/schemas`;
+        const timezoneOffset = require('../../timezone.json');
         const config = {
             dialect: 'mysql2',
             dialectOptions: {

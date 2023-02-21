@@ -7,7 +7,7 @@ const YAML = require('yaml');
 
 const accountRouter = require('./routes/account');
 
-function init(services) {
+function init(handlers) {
     const app = express();
     
     app.set('trust proxy', 1);
@@ -28,8 +28,8 @@ function init(services) {
     const swaggerDocument = YAML.parse(swaggerFile);
 
     app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-    
-    app.use('/accounts', accountRouter(services));
+
+    app.use('/accounts', accountRouter(handlers.AccountHandler));
 
     const httpServer = http.createServer(app);
 

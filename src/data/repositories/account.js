@@ -1,9 +1,10 @@
 
 
-function create() {
-    
+class AccountRepository {
+    constructor(db) {
+        // this.accountModel = db.AccountModel;
+        this.accountModel = {};
+    }
 }
 
-module.exports = {
-    create
-};
+module.exports = AccountRepository;
