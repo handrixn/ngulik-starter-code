@@ -2,7 +2,8 @@
 
 class AccountRepository {
     constructor(db) {
-        this.accountModel = db.AccountModel;
+        // this.accountModel = db.AccountModel;
+        this.accountModel = {};
     }
 }
 

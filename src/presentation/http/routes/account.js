@@ -3,9 +3,9 @@ const router = express.Router();
 
 // const authMiddleware = require('../middlewares/auth');
 
-module.exports = (handlers) => {
+module.exports = (handler) => {
     // router.get('/', authMiddleware, handlers.getAccounts);
-    router.get('/', handlers.getAccounts);
+    router.get('/', handler.getAccounts);
 
     return router;
 }

@@ -1,4 +1,6 @@
 
+require('dotenv').config();
+
 const db1 = require('./data/infrastructures/db/mysql')(process.env.DB_MYSQL_CONNECTION_STRING_1);
 
 const AccountRepository = require('./data/repositories/account');
@@ -26,7 +28,7 @@ const httpAppServer = httpAppServerContainer.init({
 });
 
 httpAppServer.listen(process.env.APP_PORT, () => {
-    console.log('connected')
+    console.log(process.env.APP_PORT)
 });
 
 grpcAppServerContainer.connectWithTls();

@@ -28,7 +28,7 @@ function init(handlers) {
     const swaggerDocument = YAML.parse(swaggerFile);
 
     app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-    
+
     app.use('/accounts', accountRouter(handlers.AccountHandler));
 
     const httpServer = http.createServer(app);
