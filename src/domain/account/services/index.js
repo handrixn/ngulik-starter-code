@@ -1,21 +1,15 @@
 
-const createAccount = async (payload) => {
-    const { repoA: AccountRepository } = this.getRepository();
+class AccountService {
+    constructor(repositories) {
+        this.accountRepository = repositories.AccountRepository;
+    }
 
-    await AccountRepository.create({});
-};
+    async getAccounts() {
+        const result = await this.accountRepository.findAll({});
 
-const exported = {
-    createAccount
-};
-
-module.exports = function (repositories) {
-    return Object.assign(
-        Object.create(exported),
-        {
-            getRepository() {
-                return repositories;
-            }
-        }
-    ) 
+        return result;
+    }
 }
+
+
+module.exports = AccountService;

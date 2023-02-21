@@ -1,9 +1,9 @@
 
 
-function create() {
-    
+class AccountRepository {
+    constructor(db) {
+        this.accountModel = db.AccountModel;
+    }
 }
 
-module.exports = {
-    create
-};
+module.exports = AccountRepository;
