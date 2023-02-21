@@ -1,0 +1,64 @@
+{
+    "rules": {
+        "no-useless-escape": [
+            0
+        ],
+        "prefer-const": [
+            2
+        ],
+        "no-var": [
+            2
+        ],
+        "prefer-spread": [
+            2
+        ],
+        "array-bracket-spacing": [
+            2
+        ],
+        "no-confusing-arrow": [
+            1
+        ],
+        "brace-style": [
+            2
+        ],
+        "semi": [
+            "error",
+            "never"
+        ],
+        "no-unused-vars": "error",
+        "no-control-regex": "off",
+        "no-undef": 2,
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi-style": [
+            "error",
+            "last"
+        ],
+        "indent": [
+            "error",
+            2
+        ]
+    },
+    "plugins": [
+        "jest"
+    ],
+    "env": {
+        "browser": false,
+        "es6": true,
+        "jest/globals": true,
+        "commonjs": true,
+        "jest": true,
+        "node": true
+    },
+    "extends": [
+        "prettier",
+        "eslint:recommended"
+    ],
+    "globals": {},
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    }
+}
