@@ -1,6 +1,7 @@
 const LogRepository = require('../repositories/mongodb/log.repositories');
 
 const error = async (params) => {
+    console.log('masuk ini')
     const payload = {
         type: 'error',
         function_name: params.functionName,

@@ -17,7 +17,7 @@ const options = {
     connectTimeoutMS: 30000,
 };
 
-if (url) {
+if (url && process.env.NODE_ENV !== 'test') {
     mongoose.connect(url, options);
 
     mongoose.pluralize(null); // disable auto pluralize collection name eg: student to students
