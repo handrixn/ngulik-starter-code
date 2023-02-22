@@ -1,8 +1,5 @@
-
-const exec = (database) => {
-    const { DataTypes } = database.Sequelize;
-
-    const attributes = {
+module.exports = (sequelize, DataTypes) => {
+    const Merchant = sequelize.define('Merchant', {
         id: {
             type: DataTypes.INTEGER(11).UNSIGNED,
             primaryKey: true,
@@ -24,25 +21,18 @@ const exec = (database) => {
             type: DataTypes.STRING(255),
             allowNull: false
         },
+    }, {
+        tableName: 'merchants',
+        underscored: true,
+        paranoid: true
+    });
+
+    Merchant.associate = (models) => {
+        Merchant.hasMany(models.MerchantLandingPageMetadata, {
+            sourceKey: 'id',
+            foreignKey: 'merchant_id'
+        });
     };
 
-    const MerchantModel = database.define(
-        'merchants',
-        attributes,
-        {
-            underscore: true,
-            tableName: 'merchants',
-        }
-    );
-
-    MerchantModel.associate = (models) => {
-        // Merchant.hasMany(models.Category, {
-        //     sourceKey: 'id',
-        //     foreignKey: 'merchant_id'
-        // });
-    };
-
-    return MerchantModel;
-}
-
-module.exports = exec;
+    return Merchant;
+};
